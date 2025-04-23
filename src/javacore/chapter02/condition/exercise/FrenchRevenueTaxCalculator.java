@@ -4,37 +4,37 @@ public class FrenchRevenueTaxCalculator {
     public static void main(String[] args){
 
         double salary = 40000;
-        double salaryNet = 20000;
+        double salaryNet = salary - (salary * 0.1);
         double impot = 0 ;
 
-        if (salary > 177106) {
+        if (salaryNet > 177106) {
 
-            impot += (salary - 177105) * 0.45;
-            salary -= (salary - 177105);
+            impot += (salaryNet - 177105) * 0.45;
+            salaryNet -= (salaryNet - 177105);
         }
 
-        if (salary > 82342){
+        if (salaryNet > 82342){
 
-            impot += (salary - 82341) * 0.41;
-            salary -= (salary - 82341);
+            impot += (salaryNet - 82341) * 0.41;
+            salaryNet -= (salaryNet - 82341);
         }
 
-        if (salary > 28798){
+        if (salaryNet > 28798){
 
-            impot += (salary - 28797) * 0.3;
-            salary -= (salary - 28797);
+            impot += (salaryNet - 28797) * 0.3;
+            salaryNet -= (salaryNet - 28797);
         }
 
-        if (salary > 11295){
+        if (salaryNet > 11295){
 
-            impot += (salary - 11294) * 0.11;
-            salary -= (salary - 11294);
+            impot += (salaryNet - 11294) * 0.11;
+            salaryNet -= (salaryNet - 11294);
         }
         else {
-            System.out.println("avec un salaire de " + salaryNet + " euros vous aurez 0 euros d'impot a payer" );
+            System.out.println("avec un salaire de " + salary + " euros vous aurez 0 euros d'impot a payer" );
         }
 
-        System.out.println("avec un salaire de " + salaryNet + " euros vous aurez " + impot + " d'euros a payer");
+        System.out.println("avec un salaire de " + salary + " euros vous aurez " + impot + " d'euros a payer");
 
     }
 }
